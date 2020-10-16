@@ -220,8 +220,15 @@ export default function App() {
 					</ParalleloUl>
 					<p className="copy">
 						&copy; {new Date().getFullYear()}{' '}
-						<a href="https://swas.io">Swashata Ghosh</a>. Made with
-						❤️ and some inspirations.
+						<a href="https://swas.io">Swashata Ghosh</a> (MIT). Made
+						with ❤️ and some inspirations.{' '}
+						<a
+							href="https://github.com/swashata/post-in-style"
+							target="_blank"
+						>
+							View Source
+						</a>
+						.
 					</p>
 				</Footer>
 			</AppContainer>
