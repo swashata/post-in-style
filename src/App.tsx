@@ -3,6 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 import Writer from './components/Writer';
 import { ReactComponent as LogoSVG } from './LogoFeather.svg';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const Header = styled.header`
 	background-color: #102a43;
@@ -151,76 +152,79 @@ const Global = createGlobalStyle`
 
 export default function App() {
 	return (
-		<AppContainer className="app">
-			<Global />
-			<Header>
-				<LogoEmoji>
-					<LogoSVG />
-				</LogoEmoji>
-				<Heading aria-label="Post In Style">Post In Style</Heading>
-			</Header>
-			<AppArea>
-				<Writer />
-				<Alert>
-					The text written with this technique is{' '}
-					<u>not screen reader friendly</u>. Use with caution.
-				</Alert>
-			</AppArea>
-			<Footer>
-				<SubHeading>
-					A simple toolkit to help you write text in bold, italic,
-					script in platforms like instagram, facebook, twitter etc.
-				</SubHeading>
+		<ErrorBoundary>
+			<AppContainer className="app">
+				<Global />
+				<Header>
+					<LogoEmoji>
+						<LogoSVG />
+					</LogoEmoji>
+					<Heading aria-label="Post In Style">Post In Style</Heading>
+				</Header>
+				<AppArea>
+					<Writer />
+					<Alert>
+						The text written with this technique is{' '}
+						<u>not screen reader friendly</u>. Use with caution.
+					</Alert>
+				</AppArea>
+				<Footer>
+					<SubHeading>
+						A simple toolkit to help you write text in bold, italic,
+						script in platforms like instagram, facebook, twitter
+						etc.
+					</SubHeading>
 
-				<ParalleloUl>
-					<li>
-						<span
-							className="emoji"
-							role="img"
-							aria-label="Write Icon"
-						>
-							✍
-						</span>{' '}
-						Write in style on Facebook, Instagram, Twitter &amp;
-						more.
-					</li>
-					<li>
-						<span
-							className="emoji"
-							role="img"
-							aria-label="Apple Icon"
-						>
-							🍎
-						</span>{' '}
-						Works with iOS, Android, Mac &amp; PC.
-					</li>
-					<li>
-						<span
-							className="emoji"
-							role="img"
-							aria-label="Support Icon"
-						>
-							🎗
-						</span>{' '}
-						Supports Bold, Italic, Script styles.
-					</li>
-					<li>
-						<span
-							className="emoji"
-							role="img"
-							aria-label="Bullet Icon"
-						>
-							🛂
-						</span>{' '}
-						Custom Bullet list with Emoji.
-					</li>
-				</ParalleloUl>
-				<p className="copy">
-					&copy; {new Date().getFullYear()}{' '}
-					<a href="https://swas.io">Swashata Ghosh</a>. Made with ❤️
-					and some inspirations.
-				</p>
-			</Footer>
-		</AppContainer>
+					<ParalleloUl>
+						<li>
+							<span
+								className="emoji"
+								role="img"
+								aria-label="Write Icon"
+							>
+								✍
+							</span>{' '}
+							Write in style on Facebook, Instagram, Twitter &amp;
+							more.
+						</li>
+						<li>
+							<span
+								className="emoji"
+								role="img"
+								aria-label="Apple Icon"
+							>
+								🍎
+							</span>{' '}
+							Works with iOS, Android, Mac &amp; PC.
+						</li>
+						<li>
+							<span
+								className="emoji"
+								role="img"
+								aria-label="Support Icon"
+							>
+								🎗
+							</span>{' '}
+							Supports Bold, Italic, Script styles.
+						</li>
+						<li>
+							<span
+								className="emoji"
+								role="img"
+								aria-label="Bullet Icon"
+							>
+								🛂
+							</span>{' '}
+							Custom Bullet list with Emoji.
+						</li>
+					</ParalleloUl>
+					<p className="copy">
+						&copy; {new Date().getFullYear()}{' '}
+						<a href="https://swas.io">Swashata Ghosh</a>. Made with
+						❤️ and some inspirations.
+					</p>
+				</Footer>
+			</AppContainer>
+		</ErrorBoundary>
 	);
 }
