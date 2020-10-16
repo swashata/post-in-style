@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Writer from './components/Writer';
+import { ReactComponent as LogoSVG } from './LogoFeather.svg';
 
 const Header = styled.header`
 	background-color: #102a43;
@@ -29,6 +30,11 @@ const LogoEmoji = styled.div`
 	font-size: 38px;
 	margin: 0 20px 0 0;
 	flex: 0 0 70px;
+	svg {
+		display: block;
+		height: 1em;
+		width: 1em;
+	}
 
 	@media screen and (min-width: 600px) {
 		height: 128px;
@@ -89,6 +95,15 @@ const Footer = styled.footer`
 	}
 `;
 
+const Alert = styled.aside`
+	background-color: #facdcd;
+	border-radius: 4px;
+	padding: 10px 20px;
+	color: #610404;
+	font-weight: bold;
+	margin: 20px 0 0;
+`;
+
 const ParalleloUl = styled.ul`
 	list-style: none;
 	margin: 40px auto;
@@ -98,6 +113,9 @@ const ParalleloUl = styled.ul`
 	background-color: #e5ebf1;
 	font-size: 22px;
 	text-align: left;
+	font-family: 'Lobster', cursive;
+	border-radius: 6px;
+	color: #334e68;
 	li {
 		margin: 15px 0;
 		transform: skewX(10deg);
@@ -137,20 +155,23 @@ export default function App() {
 			<Global />
 			<Header>
 				<LogoEmoji>
-					<span aria-label="PIS Logo" role="img">
-						🎨
-					</span>
+					<LogoSVG />
 				</LogoEmoji>
 				<Heading aria-label="Post In Style">Post In Style</Heading>
 			</Header>
 			<AppArea>
 				<Writer />
+				<Alert>
+					The text written with this technique is{' '}
+					<u>not screen reader friendly</u>. Use with caution.
+				</Alert>
 			</AppArea>
 			<Footer>
 				<SubHeading>
 					A simple toolkit to help you write text in bold, italic,
 					script in platforms like instagram, facebook, twitter etc.
 				</SubHeading>
+
 				<ParalleloUl>
 					<li>
 						<span

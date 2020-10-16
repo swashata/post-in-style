@@ -79,9 +79,9 @@ const StyledTextArea = styled(TextAreaAutoSize)`
 	border-radius: 4px;
 	border: 1px solid #bcccdc;
 	padding: 10px;
-	padding-bottom: 78px;
+	padding-bottom: 88px;
 	@media screen and (min-width: 600px) {
-		padding-bottom: 46px;
+		padding-bottom: 56px;
 	}
 	appearance: none;
 	resize: none;
@@ -145,9 +145,22 @@ export default function Writer() {
 				className="writer__textarea"
 				value={value}
 				onChange={e => {
-					setValue(
-						charMap(getMode(bold, italic, script), e.target.value)
-					);
+					const oldValue = value;
+					const newValue = e.target.value;
+					// If this is an insert
+					if (newValue.includes(oldValue)) {
+						const extraPart = charMap(
+							getMode(bold, italic, script),
+							newValue.substr(oldValue.length)
+						);
+						setValue(`${oldValue}${extraPart}`);
+					} else {
+						// some other operation
+						setValue(
+							charMap(getMode(bold, italic, script), newValue)
+						);
+					}
+
 					if (copied) {
 						setCopied(false);
 					}
@@ -218,10 +231,10 @@ export default function Writer() {
 						}}
 						onClick={e => {
 							e.preventDefault();
-							setValue(val => `${val}\n👌 `);
+							setValue(val => `${val}\n👍 `);
 						}}
 					>
-						{'👌'}
+						{'👍'}
 					</WriterButton>
 					<WriterButton
 						aria-label="Insert Check Emoji Bullet"

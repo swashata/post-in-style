@@ -34,6 +34,7 @@ export const italicMap: charmapType = {
 	e: '𝑒',
 	f: '𝑓',
 	g: '𝑔',
+	h: '𝗁',
 	i: '𝑖',
 	j: '𝑗',
 	k: '𝑘',
