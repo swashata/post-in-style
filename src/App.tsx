@@ -225,6 +225,7 @@ export default function App() {
 						<a
 							href="https://github.com/swashata/post-in-style"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							View Source
 						</a>
