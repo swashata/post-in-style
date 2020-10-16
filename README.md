@@ -8,10 +8,10 @@ A small tool I made for my wife. The objective is to use Unicode characters to
 write in Bold, Italic or Script on social media platforms like Instagram, Facebook
 etc.
 
-✍ Write in style on Facebook, Instagram, Twitter & more.
-🍎 Works with iOS, Android, Mac & PC.
-🎗 Supports Bold, Italic, Script styles.
-🛂 Custom Bullet list with Emoji.
+-   ✍ Write in style on Facebook, Instagram, Twitter & more.
+-   🍎 Works with iOS, Android, Mac & PC.
+-   🎗 Supports Bold, Italic, Script styles.
+-   🛂 Custom Bullet list with Emoji.
 
 ## DEVELOPMENT
 
