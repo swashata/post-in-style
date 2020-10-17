@@ -92,7 +92,8 @@ const Footer = styled.footer`
 	overflow: hidden;
 	p.copy {
 		text-align: center;
-		margin: 0;
+		margin: 0 auto;
+		max-width: 700px;
 	}
 `;
 
@@ -229,7 +230,8 @@ export default function App() {
 						>
 							View Source
 						</a>
-						.
+						. We are using cookies for Google Analytics. By using
+						this site, we assume you are okay with it.
 					</p>
 				</Footer>
 			</AppContainer>
