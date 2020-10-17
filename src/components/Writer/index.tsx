@@ -47,11 +47,11 @@ const WriterToolbarGroup = styled.div`
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	max-width: 114px;
-	flex: 0 0 114px;
+	max-width: 152px;
+	flex: 0 0 152px;
 
 	@media screen and (min-width: 600px) {
-		max-width: 400px;
+		max-width: none;
 		flex: 0 0 auto;
 	}
 `;
@@ -211,6 +211,30 @@ export default function Writer() {
 						className={script ? 'active' : undefined}
 					>
 						𝓢
+					</WriterButton>
+					<WriterButton
+						aria-label="Insert Hand Emoji Bullet"
+						onMouseDown={e => {
+							e.preventDefault();
+						}}
+						onClick={e => {
+							e.preventDefault();
+							setValue(val => `${val}\n▶️ `);
+						}}
+					>
+						{'▶️'}
+					</WriterButton>
+					<WriterButton
+						aria-label="Insert Hand Emoji Bullet"
+						onMouseDown={e => {
+							e.preventDefault();
+						}}
+						onClick={e => {
+							e.preventDefault();
+							setValue(val => `${val}\n📢 `);
+						}}
+					>
+						{'📢'}
 					</WriterButton>
 					<WriterButton
 						aria-label="Insert Hand Emoji Bullet"
